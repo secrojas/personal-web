@@ -23,7 +23,7 @@ A modern, minimalist digital CV/resume built with cutting-edge web technologies.
 - Single-page application with smooth user experience
 - Print-optimized layout for PDF exports
 - Fully responsive design for all devices
-- GraphQL API for resume data
+- Static export ready for any hosting (cPanel, Netlify, Vercel, etc.)
 - Fast and optimized with Next.js 14
 
 ---
@@ -36,7 +36,7 @@ A modern, minimalist digital CV/resume built with cutting-edge web technologies.
 - ⚡ **Fast Performance** - Built with Next.js 14 and optimized for speed
 - 🔍 **SEO Optimized** - Meta tags and structured data included
 - 🎯 **Easy to Customize** - Single config file for all content
-- 🌐 **GraphQL API** - Access resume data via GraphQL endpoint
+- 📦 **Static Export** - Deploy anywhere (cPanel, Netlify, Vercel, GitHub Pages)
 
 ---
 
@@ -84,15 +84,53 @@ A modern, minimalist digital CV/resume built with cutting-edge web technologies.
 
 ## 🏗️ Build for Production
 
-```bash
-# Create optimized production build
-npm run build
+This project is configured for **static export**, making it compatible with any hosting provider.
 
-# Start production server
-npm run start
+```bash
+# Create optimized static build
+npm run build
 ```
 
-The application will be available at `http://localhost:3000`
+This will generate an `out/` folder with all static files ready to deploy.
+
+---
+
+## 🚀 Deploy to cPanel (or any static hosting)
+
+### Method 1: Via File Manager (Recommended for cPanel)
+
+1. **Build the project locally:**
+   ```bash
+   npm run build
+   ```
+
+2. **Locate the output:**
+   - All files will be in the `out/` folder
+
+3. **Upload to cPanel:**
+   - Login to your cPanel
+   - Go to **File Manager**
+   - Navigate to `public_html` (or your domain's root directory)
+   - Upload **all contents** from the `out/` folder (not the folder itself)
+   - Make sure `index.html` is in the root of your public_html
+
+4. **Done!** Your CV should be live at your domain
+
+### Method 2: Via FTP
+
+1. Build the project: `npm run build`
+2. Connect to your server via FTP (FileZilla, WinSCP, etc.)
+3. Upload all files from `out/` folder to your `public_html` directory
+4. Ensure proper permissions (644 for files, 755 for folders)
+
+### Method 3: Via Git on cPanel (Advanced)
+
+If your cPanel supports Git deployment:
+
+1. Clone the repository on your server
+2. Install Node.js on cPanel (if available)
+3. Run `npm install && npm run build`
+4. Point your domain to the `out/` directory
 
 ---
 
@@ -117,13 +155,11 @@ docker compose down
 
 ## 🛠️ Built With
 
-- **[Next.js 14](https://nextjs.org/)** - React framework for production
+- **[Next.js 14](https://nextjs.org/)** - React framework for production (Static Export)
 - **[React 18](https://reactjs.org/)** - JavaScript library for building UIs
 - **[TypeScript](https://www.typescriptlang.org/)** - Typed JavaScript
 - **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
 - **[shadcn/ui](https://ui.shadcn.com/)** - Re-usable components
-- **[GraphQL](https://graphql.org/)** - API query language
-- **[Apollo Server](https://www.apollographql.com/)** - GraphQL server
 
 ---
 
