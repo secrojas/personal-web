@@ -28,7 +28,7 @@ export const RESUME_DATA = {
     "Software Engineer | Full Stack Web Developer",
   summary:
     "Full Stack Web Developer with Laravel and PHP mainly. Interest in keeping up to date with new technologies that are constantly emerging. Always wanting to continue growing and learning.",
-  avatarUrl: "https://media.licdn.com/dms/image/D4D03AQHICijOXJ1zkA/profile-displayphoto-shrink_200_200/0/1692895632131?e=1718841600&v=beta&t=AYLd1Nsnzm7q270rU7RBZSvKj1M2jX_OOlpvTB-CnTQ",
+  avatarUrl: "https://srojasweb.dev/me.jpeg",
   personalWebsiteUrl: "https://srojasweb.dev",
   contact: {
     email: "sec.rojas@gmail.com",
