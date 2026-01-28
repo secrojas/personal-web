@@ -1,0 +1,35 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+
+  <!-- Subtle grid pattern -->
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Gradient accent -->
+  <rect x="0" y="0" width="8" height="630" fill="#3b82f6"/>
+
+  <!-- Profile circle placeholder -->
+  <circle cx="200" cy="315" r="100" fill="#1a1a1a" stroke="#3b82f6" stroke-width="3"/>
+  <text x="200" y="330" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#3b82f6" text-anchor="middle">SR</text>
+
+  <!-- Name -->
+  <text x="360" y="260" font-family="Arial, sans-serif" font-size="64" font-weight="bold" fill="#fafafa">Sebastian Rojas</text>
+
+  <!-- Title -->
+  <text x="360" y="330" font-family="Arial, sans-serif" font-size="32" fill="#a1a1aa">Senior Backend Developer</text>
+
+  <!-- Tech stack line -->
+  <text x="360" y="390" font-family="monospace" font-size="24" fill="#3b82f6">PHP / Laravel / MySQL / AWS</text>
+
+  <!-- URL -->
+  <text x="360" y="460" font-family="Arial, sans-serif" font-size="24" fill="#71717a">srojasweb.dev</text>
+
+  <!-- Decorative code brackets -->
+  <text x="1050" y="200" font-family="monospace" font-size="120" fill="#1a1a1a">{</text>
+  <text x="1100" y="500" font-family="monospace" font-size="120" fill="#1a1a1a">}</text>
+</svg>
