@@ -1,0 +1,75 @@
+---
+import { RESUME_DATA } from "@/data/resume-data";
+import GitHubIcon from "@/components/icons/GitHubIcon.astro";
+import LinkedInIcon from "@/components/icons/LinkedInIcon.astro";
+import EmailIcon from "@/components/icons/EmailIcon.astro";
+import Section from "@/components/ui/Section.astro";
+---
+
+<Section class="py-20 px-4">
+  <div class="container mx-auto max-w-2xl text-center">
+    <h2 class="mb-4 text-3xl font-bold text-foreground">Let's Connect</h2>
+
+    <p class="mb-8 text-lg text-muted-foreground">
+      I'm always open to discussing new projects, interesting challenges, or
+      opportunities to collaborate.
+    </p>
+
+    <!-- Primary CTA -->
+    <a
+      href={`mailto:${RESUME_DATA.contact.email}`}
+      class="mb-8 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-8 py-4 text-lg font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+    >
+      <EmailIcon class="size-5" />
+      Send me an email
+    </a>
+
+    <!-- Social Links -->
+    <div class="flex items-center justify-center gap-6">
+      <a
+        href="https://github.com/secrojas"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+      >
+        <GitHubIcon class="size-5" />
+        <span>GitHub</span>
+      </a>
+      <a
+        href="https://www.linkedin.com/in/secrojas/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+      >
+        <LinkedInIcon class="size-5" />
+        <span>LinkedIn</span>
+      </a>
+    </div>
+
+    <!-- Resume link -->
+    <div class="mt-12 rounded-lg border border-border p-6">
+      <p class="mb-4 text-muted-foreground">
+        Looking for my detailed work history and skills?
+      </p>
+      <a
+        href="/resume"
+        class="inline-flex items-center gap-2 font-medium text-primary hover:underline"
+      >
+        View my full resume
+        <svg
+          class="size-4"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M5 12h14"></path>
+          <path d="m12 5 7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</Section>

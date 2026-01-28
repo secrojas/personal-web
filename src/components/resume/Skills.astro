@@ -1,0 +1,12 @@
+---
+import { RESUME_DATA } from "@/data/resume-data";
+import Section from "@/components/ui/Section.astro";
+import Badge from "@/components/ui/Badge.astro";
+---
+
+<Section>
+  <h2 class="text-xl font-bold">Skills</h2>
+  <div class="flex flex-wrap gap-1">
+    {RESUME_DATA.skills.map((skill) => <Badge>{skill}</Badge>)}
+  </div>
+</Section>

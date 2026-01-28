@@ -1,0 +1,49 @@
+---
+import { RESUME_DATA } from "@/data/resume-data";
+import Section from "@/components/ui/Section.astro";
+---
+
+<Section class="py-20 px-4">
+  <div class="container mx-auto max-w-4xl">
+    <h2 class="mb-8 text-3xl font-bold text-foreground">About Me</h2>
+
+    <div class="space-y-6 text-lg text-muted-foreground">
+      <p>{RESUME_DATA.summary}</p>
+
+      <ul class="grid gap-4 sm:grid-cols-2">
+        <li class="flex items-start gap-3">
+          <span class="mt-1 flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <svg class="size-3" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+            </svg>
+          </span>
+          <span>6+ years building production-grade Laravel applications</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1 flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <svg class="size-3" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+            </svg>
+          </span>
+          <span>Expert in REST API design and implementation</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1 flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <svg class="size-3" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+            </svg>
+          </span>
+          <span>AWS Certified Cloud Practitioner</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="mt-1 flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+            <svg class="size-3" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+            </svg>
+          </span>
+          <span>Strong focus on clean code and SOLID principles</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</Section>

@@ -1,0 +1,102 @@
+---
+import { RESUME_DATA } from "@/data/resume-data";
+import Section from "@/components/ui/Section.astro";
+import Badge from "@/components/ui/Badge.astro";
+
+const { experienceHighlights } = RESUME_DATA;
+---
+
+<Section class="py-20 px-4">
+  <div class="container mx-auto max-w-4xl">
+    <h2 class="mb-12 text-3xl font-bold text-foreground text-center">
+      Experience Highlights
+    </h2>
+
+    <div class="grid gap-6 md:grid-cols-3">
+      {
+        experienceHighlights.map((highlight) => (
+          <div class="group rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary/50">
+            <h3 class="mb-3 text-lg font-semibold text-foreground">
+              {highlight.title}
+            </h3>
+            <p class="mb-4 text-sm text-muted-foreground">
+              {highlight.description}
+            </p>
+            <div class="flex flex-wrap gap-2">
+              {highlight.tags.map((tag) => (
+                <Badge variant="outline" class="text-xs">
+                  {tag}
+                </Badge>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Recent positions -->
+    <div class="mt-16">
+      <h3 class="mb-8 text-xl font-semibold text-foreground text-center">
+        Recent Positions
+      </h3>
+
+      <div class="space-y-6">
+        {
+          RESUME_DATA.work.slice(0, 3).map((job) => (
+            <div class="flex flex-col gap-2 rounded-lg border border-border p-6 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <div class="flex items-center gap-2">
+                  <h4 class="font-semibold text-foreground">
+                    {job.link !== "#" ? (
+                      <a
+                        href={job.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:underline"
+                      >
+                        {job.company}
+                      </a>
+                    ) : (
+                      job.company
+                    )}
+                  </h4>
+                  {job.badges.map((badge) => (
+                    <Badge variant="secondary" class="text-xs">
+                      {badge}
+                    </Badge>
+                  ))}
+                </div>
+                <p class="text-sm text-muted-foreground">{job.title}</p>
+              </div>
+              <p class="text-sm tabular-nums text-muted-foreground">
+                {job.start} – {job.end}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="mt-8 text-center">
+        <a
+          href="/resume"
+          class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
+        >
+          View complete work history
+          <svg
+            class="size-4"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</Section>

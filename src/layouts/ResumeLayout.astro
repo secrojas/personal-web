@@ -1,0 +1,68 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <slot />
+</BaseLayout>
+
+<style is:global>
+  /* Print-specific styles for resume */
+  @media print {
+    @page {
+      margin: 0.5in;
+      size: letter;
+    }
+
+    body {
+      font-size: 12px;
+      line-height: 1.4;
+      background: white !important;
+      color: black !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* Reset dark theme colors for print */
+    * {
+      color: black !important;
+      background: transparent !important;
+      border-color: #e5e7eb !important;
+    }
+
+    /* Hide non-essential elements */
+    .no-print,
+    nav,
+    footer {
+      display: none !important;
+    }
+
+    /* Ensure content is visible */
+    .print-visible {
+      display: block !important;
+    }
+
+    /* Page breaks */
+    .print-force-new-page {
+      page-break-before: always;
+    }
+
+    /* Links */
+    a {
+      text-decoration: underline !important;
+    }
+
+    /* Badges */
+    .badge {
+      border: 1px solid #e5e7eb !important;
+      background: #f3f4f6 !important;
+    }
+  }
+</style>

@@ -1,0 +1,116 @@
+---
+import { RESUME_DATA } from "@/data/resume-data";
+import GitHubIcon from "@/components/icons/GitHubIcon.astro";
+import LinkedInIcon from "@/components/icons/LinkedInIcon.astro";
+import EmailIcon from "@/components/icons/EmailIcon.astro";
+---
+
+<section class="relative flex min-h-[90vh] items-center justify-center px-4">
+  <div class="container mx-auto max-w-4xl text-center">
+    <!-- Avatar -->
+    <div class="mb-8">
+      <img
+        src={RESUME_DATA.avatarUrl}
+        alt={RESUME_DATA.name}
+        class="mx-auto size-40 rounded-full border-4 border-border object-cover shadow-lg"
+      />
+    </div>
+
+    <!-- Name -->
+    <h1 class="mb-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
+      {RESUME_DATA.name}
+    </h1>
+
+    <!-- Title -->
+    <p class="mb-6 text-xl text-muted-foreground sm:text-2xl">
+      {RESUME_DATA.about}
+    </p>
+
+    <!-- Location -->
+    <p class="mb-8 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+      <svg
+        class="size-4"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="12" cy="12" r="10"></circle>
+        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+        <path d="M2 12h20"></path>
+      </svg>
+      <a
+        href={RESUME_DATA.locationLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-foreground hover:underline"
+      >
+        {RESUME_DATA.location}
+      </a>
+    </p>
+
+    <!-- CTAs -->
+    <div class="mb-12 flex flex-wrap items-center justify-center gap-4">
+      <a
+        href="/resume"
+        class="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+      >
+        View Full Resume
+      </a>
+      <a
+        href={`mailto:${RESUME_DATA.contact.email}`}
+        class="inline-flex items-center justify-center rounded-md border border-input bg-background px-6 py-3 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+      >
+        Get in Touch
+      </a>
+    </div>
+
+    <!-- Social Links -->
+    <div class="flex items-center justify-center gap-4">
+      <a
+        href="https://github.com/secrojas"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex size-10 items-center justify-center rounded-md border border-input bg-background transition-colors hover:bg-accent hover:text-accent-foreground"
+        aria-label="GitHub"
+      >
+        <GitHubIcon class="size-5" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/secrojas/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex size-10 items-center justify-center rounded-md border border-input bg-background transition-colors hover:bg-accent hover:text-accent-foreground"
+        aria-label="LinkedIn"
+      >
+        <LinkedInIcon class="size-5" />
+      </a>
+      <a
+        href={`mailto:${RESUME_DATA.contact.email}`}
+        class="inline-flex size-10 items-center justify-center rounded-md border border-input bg-background transition-colors hover:bg-accent hover:text-accent-foreground"
+        aria-label="Email"
+      >
+        <EmailIcon class="size-5" />
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <svg
+      class="size-6 text-muted-foreground"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="m6 9 6 6 6-6"></path>
+    </svg>
+  </div>
+</section>

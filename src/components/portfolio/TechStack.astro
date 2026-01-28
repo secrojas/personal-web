@@ -1,0 +1,46 @@
+---
+import { RESUME_DATA } from "@/data/resume-data";
+import Section from "@/components/ui/Section.astro";
+import Badge from "@/components/ui/Badge.astro";
+
+const { techStack } = RESUME_DATA;
+
+const categories = [
+  { title: "Backend", items: techStack.backend, icon: "server" },
+  { title: "Databases", items: techStack.databases, icon: "database" },
+  { title: "Architecture", items: techStack.architecture, icon: "layers" },
+  { title: "Testing", items: techStack.testing, icon: "check" },
+  { title: "Tooling", items: techStack.tooling, icon: "tool" },
+];
+---
+
+<Section class="py-20 px-4 bg-secondary/30">
+  <div class="container mx-auto max-w-4xl">
+    <h2 class="mb-12 text-3xl font-bold text-foreground text-center">Tech Stack</h2>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        categories.map((category) => (
+          <div class="rounded-lg border border-border bg-card p-6">
+            <h3 class="mb-4 text-lg font-semibold text-foreground">
+              {category.title}
+            </h3>
+            <div class="flex flex-wrap gap-2">
+              {category.items.map((item) => (
+                <Badge variant="secondary">{item}</Badge>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- Additional skills note -->
+    <p class="mt-8 text-center text-sm text-muted-foreground">
+      Plus extensive experience with Vue.js, React, Angular, and modern frontend frameworks.
+      <a href="/resume" class="underline hover:text-foreground">
+        See full skill list →
+      </a>
+    </p>
+  </div>
+</Section>

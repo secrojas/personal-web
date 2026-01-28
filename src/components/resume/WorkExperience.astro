@@ -1,0 +1,48 @@
+---
+import { RESUME_DATA } from "@/data/resume-data";
+import Section from "@/components/ui/Section.astro";
+import Card from "@/components/ui/Card.astro";
+import CardHeader from "@/components/ui/CardHeader.astro";
+import CardContent from "@/components/ui/CardContent.astro";
+import Badge from "@/components/ui/Badge.astro";
+---
+
+<Section>
+  <h2 class="text-xl font-bold">Work Experience</h2>
+  {
+    RESUME_DATA.work.map((work) => (
+      <Card>
+        <CardHeader>
+          <div class="flex items-center justify-between gap-x-2 text-base">
+            <h3 class="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
+              {work.link !== "#" ? (
+                <a
+                  class="hover:underline"
+                  href={work.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {work.company}
+                </a>
+              ) : (
+                work.company
+              )}
+              <span class="inline-flex gap-x-1">
+                {work.badges.map((badge) => (
+                  <Badge variant="secondary" class="align-middle text-xs">
+                    {badge}
+                  </Badge>
+                ))}
+              </span>
+            </h3>
+            <div class="text-sm tabular-nums text-gray-500">
+              {work.start} - {work.end ?? "Present"}
+            </div>
+          </div>
+          <h4 class="font-mono text-sm leading-none">{work.title}</h4>
+        </CardHeader>
+        <CardContent class="mt-2 text-xs">{work.description}</CardContent>
+      </Card>
+    ))
+  }
+</Section>

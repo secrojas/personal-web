@@ -1,50 +1,50 @@
 <div align="center">
 
-# 💼 Sebastian Rojas - Digital CV
+# Sebastian Rojas - Portfolio & CV
 
-### Full Stack Web Developer | Software Engineer
+### Senior Backend Developer | PHP / Laravel
 
-[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Astro](https://img.shields.io/badge/Astro-5-BC52EE?style=for-the-badge&logo=astro)](https://astro.build/)
 [![React](https://img.shields.io/badge/React-18-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![TailwindCSS](https://img.shields.io/badge/Tailwind-3-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 
-[View Live Demo](https://srojasweb.dev) • [Report Bug](https://github.com/secrojas/cv/issues) • [Request Feature](https://github.com/secrojas/cv/issues)
+[View Live Demo](https://srojasweb.dev) | [View Resume](https://srojasweb.dev/resume)
 
 </div>
 
 ---
 
-## 📋 About The Project
+## About The Project
 
-A modern, minimalist digital CV/resume built with cutting-edge web technologies. This project showcases my professional experience, skills, and education in a clean, print-friendly, and responsive layout.
+A modern portfolio and digital CV built with Astro 5. Features a landing page portfolio with hero section, tech stack, experience highlights, and projects, plus a detailed resume page optimized for print.
 
 **Key Highlights:**
-- Single-page application with smooth user experience
-- Print-optimized layout for PDF exports
+- Portfolio landing page + detailed resume page
+- Print-optimized resume layout for PDF exports
 - Fully responsive design for all devices
-- Static export ready for any hosting (cPanel, Netlify, Vercel, etc.)
-- Fast and optimized with Next.js 14
+- Static export ready for any hosting
+- Fast performance with Astro's partial hydration
 
 ---
 
-## ✨ Features
+## Features
 
-- 🎨 **Modern Design** - Clean and professional minimalist UI
-- 📱 **Responsive** - Perfectly adapted for desktop, tablet, and mobile
-- 🖨️ **Print-Friendly** - Optimized layout for PDF generation
-- ⚡ **Fast Performance** - Built with Next.js 14 and optimized for speed
-- 🔍 **SEO Optimized** - Meta tags and structured data included
-- 🎯 **Easy to Customize** - Single config file for all content
-- 📦 **Static Export** - Deploy anywhere (cPanel, Netlify, Vercel, GitHub Pages)
+- **Dual Layout** - Portfolio landing page + detailed resume
+- **Modern Design** - Clean, professional dark theme UI
+- **Responsive** - Adapted for desktop, tablet, and mobile
+- **Print-Friendly** - Resume page optimized for PDF generation
+- **Fast Performance** - Built with Astro 5 and partial hydration
+- **Easy to Customize** - Single config file for all content
+- **Static Export** - Deploy anywhere (cPanel, Netlify, Vercel)
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ or npm/yarn/pnpm installed
+- Node.js 18+
 
 ### Installation
 
@@ -57,133 +57,89 @@ A modern, minimalist digital CV/resume built with cutting-edge web technologies.
 2. **Install dependencies**
    ```bash
    npm install
-   # or
-   yarn install
-   # or
-   pnpm install
    ```
 
 3. **Start development server**
    ```bash
    npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
    ```
 
 4. **Open your browser**
 
-   Navigate to [http://localhost:3000](http://localhost:3000)
+   Navigate to [http://localhost:4321](http://localhost:4321)
 
-5. **Customize your CV**
+5. **Customize your content**
 
-   Edit the [resume-data.tsx](./src/data/resume-data.tsx) file with your information
+   Edit [src/data/resume-data.ts](./src/data/resume-data.ts) with your information
 
 ---
 
-## 🏗️ Build for Production
-
-This project is configured for **static export**, making it compatible with any hosting provider.
+## Build for Production
 
 ```bash
-# Create optimized static build
 npm run build
 ```
 
-This will generate an `out/` folder with all static files ready to deploy.
+This generates a `dist/` folder with all static files ready to deploy.
+
+**Preview the build:**
+```bash
+npm run preview
+```
 
 ---
 
-## 🚀 Deploy to cPanel (or any static hosting)
+## Deploy to cPanel (or any static hosting)
 
-### Method 1: Via File Manager (Recommended for cPanel)
-
-1. **Build the project locally:**
+1. **Build the project:**
    ```bash
    npm run build
    ```
 
-2. **Locate the output:**
-   - All files will be in the `out/` folder
-
-3. **Upload to cPanel:**
+2. **Upload to cPanel:**
    - Login to your cPanel
    - Go to **File Manager**
-   - Navigate to `public_html` (or your domain's root directory)
-   - Upload **all contents** from the `out/` folder (not the folder itself)
-   - Make sure `index.html` is in the root of your public_html
+   - Navigate to `public_html`
+   - Upload **all contents** from the `dist/` folder
+   - Make sure `index.html` is in the root
 
-4. **Done!** Your CV should be live at your domain
-
-### Method 2: Via FTP
-
-1. Build the project: `npm run build`
-2. Connect to your server via FTP (FileZilla, WinSCP, etc.)
-3. Upload all files from `out/` folder to your `public_html` directory
-4. Ensure proper permissions (644 for files, 755 for folders)
-
-### Method 3: Via Git on cPanel (Advanced)
-
-If your cPanel supports Git deployment:
-
-1. Clone the repository on your server
-2. Install Node.js on cPanel (if available)
-3. Run `npm install && npm run build`
-4. Point your domain to the `out/` directory
+3. **Done!** Your site should be live
 
 ---
 
-## 🐳 Run with Docker
+## Built With
 
-**Build the container:**
-```bash
-docker compose build
-```
-
-**Run the container:**
-```bash
-docker compose up -d
-```
-
-**Stop the container:**
-```bash
-docker compose down
-```
+- **[Astro 5](https://astro.build/)** - Static site generator with partial hydration
+- **[React 18](https://reactjs.org/)** - For interactive components (Command Menu)
+- **[TypeScript](https://www.typescriptlang.org/)** - Type safety
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS
 
 ---
 
-## 🛠️ Built With
-
-- **[Next.js 14](https://nextjs.org/)** - React framework for production (Static Export)
-- **[React 18](https://reactjs.org/)** - JavaScript library for building UIs
-- **[TypeScript](https://www.typescriptlang.org/)** - Typed JavaScript
-- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
-- **[shadcn/ui](https://ui.shadcn.com/)** - Re-usable components
-
----
-
-## 📂 Project Structure
+## Project Structure
 
 ```
 cv/
 ├── src/
-│   ├── app/              # Next.js app directory
-│   ├── components/       # React components
-│   ├── data/            # Resume data configuration
-│   ├── images/          # Static images
-│   └── lib/             # Utility functions
-├── public/              # Public assets
-└── package.json         # Dependencies
+│   ├── components/
+│   │   ├── icons/        # SVG icon components
+│   │   ├── portfolio/    # Portfolio page components
+│   │   ├── resume/       # Resume page components
+│   │   └── ui/           # Shared UI components
+│   ├── data/
+│   │   └── resume-data.ts  # All content configuration
+│   ├── layouts/          # Page layouts
+│   ├── pages/            # Astro pages (index, resume)
+│   └── styles/           # Global styles
+├── public/               # Static assets
+└── package.json
 ```
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
-All resume content can be customized in a single file:
-
-**[src/data/resume-data.tsx](./src/data/resume-data.tsx)**
+All content is in a single file: **[src/data/resume-data.ts](./src/data/resume-data.ts)**
 
 Update your:
 - Personal information
@@ -196,35 +152,19 @@ Update your:
 
 ---
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 👤 Author
+## Author
 
 **Sebastian Rojas**
 
 - Website: [srojasweb.dev](https://srojasweb.dev)
 - GitHub: [@secrojas](https://github.com/secrojas)
 - LinkedIn: [linkedin.com/in/secrojas](https://www.linkedin.com/in/secrojas)
-- Email: sec.rojas@gmail.com
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Original template inspired by [Bartosz Jarocki's CV](https://github.com/BartoszJarocki/cv)
 - Icons by [Lucide](https://lucide.dev/)
-- UI components by [shadcn/ui](https://ui.shadcn.com/)
-
----
-
-<div align="center">
-
-**⭐ If you like this project, please give it a star! ⭐**
-
-Made with ❤️ by [Sebastian Rojas](https://github.com/secrojas)
 
 </div>

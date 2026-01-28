@@ -1,0 +1,19 @@
+---
+import { RESUME_DATA } from "@/data/resume-data";
+import Section from "@/components/ui/Section.astro";
+import Badge from "@/components/ui/Badge.astro";
+---
+
+<Section>
+  <h2 class="text-xl font-bold">Certifications</h2>
+  <div class="flex flex-wrap gap-2">
+    {
+      RESUME_DATA.certifications.map((cert) => (
+        <div class="inline-flex items-center gap-1">
+          <Badge variant="outline">{cert.name}</Badge>
+          <span class="text-xs text-muted-foreground">({cert.issuer})</span>
+        </div>
+      ))
+    }
+  </div>
+</Section>
