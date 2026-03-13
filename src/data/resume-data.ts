@@ -232,6 +232,26 @@ export const RESUME_DATA = {
   ],
   projects: [
     {
+      title: "TalentTrack",
+      techStack: ["Laravel 12", "PHP 8.2", "Vue 3", "MySQL"],
+      description:
+        "CRM for IT recruiters. Client management, job searches, candidates, and complete activity tracking from a clean dashboard. Features AI-powered candidate analysis with Claude and ChatGPT integration.",
+      link: {
+        label: "talenttrack.srojasweb.dev",
+        href: "https://talenttrack.srojasweb.dev/",
+      },
+    },
+    {
+      title: "Tibaldi Way Viajes",
+      techStack: ["Nuxt 3", "Vue 3", "TailwindCSS", "SSG"],
+      description:
+        "Professional landing page for an international travel agency. Destination showcase, contact form, and WhatsApp button. Responsive design optimized for SEO and Core Web Vitals.",
+      link: {
+        label: "tibaldiwayviajes.com.ar",
+        href: "https://www.tibaldiwayviajes.com.ar/",
+      },
+    },
+    {
       title: "MiEntreno",
       techStack: ["Laravel 11", "PHP 8.2", "MySQL", "Multi-tenant"],
       description:
@@ -239,6 +259,36 @@ export const RESUME_DATA = {
       link: {
         label: "mientreno.srojasweb.dev",
         href: "https://mientreno.srojasweb.dev/",
+      },
+    },
+    {
+      title: "Apertus",
+      techStack: ["React 18", "TypeScript", "Laravel", "Redux"],
+      description:
+        "HR management system with public portal and admin panel. Job listings, CV management, candidate tracking pipeline, and contact form. Role-based access control.",
+      link: {
+        label: "apertus.com.ar",
+        href: "https://apertus.com.ar/",
+      },
+    },
+    {
+      title: "Grupo FG",
+      techStack: ["Laravel", "MySQL", "Custom Admin Panel", "E-commerce"],
+      description:
+        "E-commerce and corporate website for industrial products company. Custom-built admin panel for product management, inventory, orders, and customer management. Payment integration with Mercado Pago.",
+      link: {
+        label: "grupofg.com.ar",
+        href: "https://grupofg.com.ar/tienda-virtual",
+      },
+    },
+    {
+      title: "Zyla Labs",
+      techStack: ["Laravel", "API REST", "PHP", "MySQL", "Python"],
+      description:
+        "API marketplace platform to discover, build, and connect to APIs. Contributed to core API development and maintenance.",
+      link: {
+        label: "zylalabs.com",
+        href: "https://zylalabs.com/",
       },
     },
     {
@@ -259,16 +309,6 @@ export const RESUME_DATA = {
       link: {
         label: "github.com",
         href: "https://github.com/secrojas/laravel-docker-starter",
-      },
-    },
-    {
-      title: "Zyla Labs",
-      techStack: ["Laravel", "API REST", "PHP", "MySQL", "Python"],
-      description:
-        "API marketplace platform to discover, build, and connect to APIs. Contributed to core API development and maintenance.",
-      link: {
-        label: "zylalabs.com",
-        href: "https://zylalabs.com/",
       },
     },
   ],
