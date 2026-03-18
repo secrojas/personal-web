@@ -3,6 +3,8 @@ import { RESUME_DATA } from "@/data/resume-data";
 import GitHubIcon from "@/components/icons/GitHubIcon.astro";
 import LinkedInIcon from "@/components/icons/LinkedInIcon.astro";
 import EmailIcon from "@/components/icons/EmailIcon.astro";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon.astro";
+import PhoneIcon from "@/components/icons/PhoneIcon.astro";
 import Section from "@/components/ui/Section.astro";
 ---
 
@@ -44,6 +46,58 @@ import Section from "@/components/ui/Section.astro";
         <LinkedInIcon class="size-5" />
         <span>LinkedIn</span>
       </a>
+      <a
+        href="https://wa.me/5492233000747"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+      >
+        <WhatsAppIcon class="size-5" />
+        <span>WhatsApp</span>
+      </a>
+      <a
+        href="tel:+5492233000747"
+        class="flex items-center gap-2 text-muted-foreground transition-colors hover:text-foreground"
+      >
+        <PhoneIcon class="size-5" />
+        <span>2233000747</span>
+      </a>
+    </div>
+
+    <!-- Freelance Section -->
+    <div class="mt-12 rounded-2xl border border-border/50 bg-gradient-to-br from-primary/5 via-background to-secondary/5 p-8">
+      <div class="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5">
+        <span class="relative flex h-2 w-2">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+        </span>
+        <span class="text-sm font-medium text-primary">Available for projects</span>
+      </div>
+      
+      <h3 class="mb-3 text-xl font-bold text-foreground">Freelance & Consulting</h3>
+      <p class="mb-6 text-muted-foreground">
+        Available for web development projects and IT consulting. 
+        Let's build something great together.
+      </p>
+      
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="https://wa.me/5492233000747"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-full bg-green-500 px-6 py-3 font-medium text-white transition-transform hover:scale-105 hover:bg-green-600"
+        >
+          <WhatsAppIcon class="size-5" />
+          Let's talk on WhatsApp
+        </a>
+        <a
+          href="tel:+5492233000747"
+          class="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 font-medium text-foreground transition-colors hover:bg-accent"
+        >
+          <PhoneIcon class="size-5" />
+          2233000747
+        </a>
+      </div>
     </div>
 
     <!-- Resume link -->
