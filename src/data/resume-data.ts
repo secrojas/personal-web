@@ -3,7 +3,7 @@ export const RESUME_DATA = {
   initials: "SR",
   location: "Mar del Plata, Buenos Aires",
   locationLink: "https://maps.app.goo.gl/BUTwHxXhKxS936uH7",
-  about: "Senior Backend Developer – PHP / Laravel",
+  about: "Fullstack Web Developer – PHP / Laravel",
   summary:
     "Backend-focused Full Stack Developer with 6+ years of experience building scalable web applications. Specialized in PHP/Laravel ecosystem with strong expertise in API development, database optimization, and cloud infrastructure. Passionate about clean code, SOLID principles, and delivering maintainable solutions.",
   avatarUrl: "/me.jpeg",
@@ -228,6 +228,12 @@ export const RESUME_DATA = {
     "Kanban",
     "PHPUnit",
     "SOLID",
+    "AI Tools",
+    "Claude Code",
+    "ChatGPT",
+    "Gemini",
+    "Cursor",
+    "Perplexity",
     "RESTful APIs",
   ],
   projects: [
