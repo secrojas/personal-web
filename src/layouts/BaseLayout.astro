@@ -16,16 +16,13 @@ const imageUrl = ogImage ? new URL(ogImage, siteUrl).href : `${siteUrl}/og-image
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="es" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-
-    <!-- SEO Meta Tags -->
     <meta name="author" content={RESUME_DATA.name} />
-    <meta name="keywords" content="Sebastian Rojas, Fullstack Developer, PHP, Laravel, React, Vue, Web Developer, Argentina, Frontend, Backend" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="googlebot" content="index, follow" />
 
     <!-- Favicon -->
@@ -40,24 +37,32 @@ const imageUrl = ogImage ? new URL(ogImage, siteUrl).href : `${siteUrl}/og-image
     <meta property="og:url" content={currentUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image" content={`${siteUrl}/og-image.png`} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={`${RESUME_DATA.name} - ${RESUME_DATA.about}`} />
-    <meta property="og:site_name" content={RESUME_DATA.name} />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:site_name" content={`${RESUME_DATA.name} - Portfolio`} />
+    <meta property="og:locale" content="es_AR" />
 
-    <!-- Twitter -->
+    <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@secrojas" />
+    <meta name="twitter:creator" content="@secrojas" />
     <meta name="twitter:url" content={currentUrl} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image" content={`${siteUrl}/og-image.png`} />
     <meta name="twitter:image:alt" content={`${RESUME_DATA.name} - ${RESUME_DATA.about}`} />
 
-    <!-- Additional for messaging apps (Slack, Discord, Telegram) -->
-    <meta property="og:image:type" content="image/png" />
+    <!-- WhatsApp specific -->
+    <meta property="og:title" content={`${RESUME_DATA.name} | ${RESUME_DATA.about}`} />
+    <meta property="og:description" content="Portfolio profesional de desarrollo web. PHP, Laravel, React, Vue, Angular." />
+    
+    <!-- Theme color for mobile browsers -->
     <meta name="theme-color" content="#0a0a0a" />
+    <meta name="msapplication-navbutton-color" content="#0a0a0a" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -72,38 +77,57 @@ const imageUrl = ogImage ? new URL(ogImage, siteUrl).href : `${siteUrl}/og-image
     <!-- Structured Data for SEO & LLMs -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "ProfilePage",
-      "mainEntity": {
-        "@type": "Person",
-        "name": RESUME_DATA.name,
-        "url": siteUrl,
-        "image": `${siteUrl}/me.jpeg`,
-        "jobTitle": RESUME_DATA.about,
-        "description": RESUME_DATA.summary,
-        "email": RESUME_DATA.contact.email,
-        "telephone": RESUME_DATA.contact.tel,
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Mar del Plata",
-          "addressRegion": "Buenos Aires",
-          "addressCountry": "Argentina"
-        },
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Intive",
-          "url": "https://www.intive.com/"
-        },
-        "knowsAbout": RESUME_DATA.skills.slice(0, 15),
-        "sameAs": [
-          "https://github.com/secrojas",
-          "https://www.linkedin.com/in/secrojas/",
-          "https://gitlab.com/secrojas"
-        ],
-        "alumniOf": RESUME_DATA.education.map(edu => ({
-          "@type": "EducationalOrganization",
-          "name": edu.school
-        }))
-      }
+      "@type": "Person",
+      "name": RESUME_DATA.name,
+      "url": siteUrl,
+      "image": `${siteUrl}/me.jpeg`,
+      "jobTitle": RESUME_DATA.about,
+      "description": RESUME_DATA.summary,
+      "email": RESUME_DATA.contact.email,
+      "telephone": RESUME_DATA.contact.tel,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mar del Plata",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Intive",
+        "url": "https://www.intive.com/"
+      },
+      "knowsAbout": ["PHP", "Laravel", "React", "Vue.js", "Angular", "MySQL", "AWS", "Docker", "TypeScript", "Node.js"],
+      "skills": RESUME_DATA.skills,
+      "sameAs": [
+        "https://github.com/secrojas",
+        "https://www.linkedin.com/in/secrojas/",
+        "https://gitlab.com/secrojas"
+      ],
+      "alumniOf": RESUME_DATA.education.map(edu => ({
+        "@type": "EducationalOrganization",
+        "name": edu.school
+      }))
+    })} />
+
+    <!-- Service Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": `${RESUME_DATA.name} - Web Development Services`,
+      "description": "Freelance web development services. PHP/Laravel backend, React/Vue frontend, API development, and consulting.",
+      "url": siteUrl,
+      "telephone": RESUME_DATA.contact.tel,
+      "email": RESUME_DATA.contact.email,
+      "areaServed": [
+        { "@type": "City", "name": "Mar del Plata" },
+        { "@type": "Country", "name": "Argentina" }
+      ],
+      "serviceType": ["Web Development", "Backend Development", "Frontend Development", "API Development", "Consulting"],
+      "priceRange": "$$",
+      "sameAs": [
+        "https://github.com/secrojas",
+        "https://www.linkedin.com/in/secrojas/"
+      ]
     })} />
 
     <!-- WebSite structured data for search -->
@@ -116,6 +140,14 @@ const imageUrl = ogImage ? new URL(ogImage, siteUrl).href : `${siteUrl}/og-image
       "author": {
         "@type": "Person",
         "name": RESUME_DATA.name
+      },
+      "potentialAction": {
+        "@type": "ContactAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": `mailto:${RESUME_DATA.contact.email}`
+        },
+        "description": "Contact for web development services"
       }
     })} />
   </head>
