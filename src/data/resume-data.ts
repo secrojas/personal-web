@@ -302,6 +302,16 @@ export const RESUME_DATA = {
       },
     },
     {
+      title: "DG Servicios",
+      techStack: ["Laravel", "PHP", "MySQL", "Energías Renovables"],
+      description:
+        "Corporate website for renewable energy company in Mar del Plata. Design and engineering of photovoltaic projects, comprehensive energy management, and system installation. Features project showcase, statistics dashboard (830kW installed capacity), and contact integration.",
+      link: {
+        label: "dgservicios.ar",
+        href: "https://dgservicios.ar/",
+      },
+    },
+    {
       title: "Laravel Docker Starter",
       techStack: ["Docker", "Laravel 12", "Nginx", "MySQL", "Redis"],
       description:
