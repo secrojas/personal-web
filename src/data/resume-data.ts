@@ -332,10 +332,18 @@ export const RESUME_DATA = {
   // Portfolio-specific data
   techStack: {
     backend: ["PHP", "Laravel", "Node.js", "Python"],
+    frontend: ["React", "Vue.js", "Angular", "Astro", "JavaScript", "TypeScript", "TailwindCSS"],
     databases: ["MySQL", "Redis", "DynamoDB"],
     architecture: ["REST API", "SOLID", "Microservices"],
     testing: ["PHPUnit", "Feature Tests"],
-    tooling: ["Docker", "AWS", "Git", "Forge"],
+    tooling: ["Docker", "AWS", "Git", "Forge", "Claude Code", "ChatGPT", "Gemini"],
+  } as {
+    backend: string[];
+    frontend: string[];
+    databases: string[];
+    architecture: string[];
+    testing: string[];
+    tooling: string[];
   },
 
   experienceHighlights: [
